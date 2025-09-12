@@ -109,7 +109,7 @@ const LayoutIndex = props => {
       {/* 英雄区 */}
       {siteConfig('STARTER_HERO_ENABLE', true, CONFIG) && <Hero {...props} />}
       {/* 合作伙伴 */}
-      {siteConfig('STARTER_BRANDS_ENABLE', true, CONFIG) && <Brand />}
+      {siteConfig('STARTER_BRANDS_ENABLE', false, CONFIG) && <Brand />}
       {/* 产品特性 */}
       {siteConfig('STARTER_FEATURE_ENABLE', true, CONFIG) && <Features />}
       {/* 关于 */}
