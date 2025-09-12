@@ -10,7 +10,7 @@ const CONFIG = {
 
   // 英雄区块导航
   STARTER_HERO_ENABLE: true, // 开启英雄区
-  STARTER_HERO_TITLE_1: 'Lupin Visual | 插畫 × 設計 × UI/UX', // 英雄区文字
+  STARTER_HERO_TITLE_1: 'Lupin Visual | 視覺設計', // 英雄区文字
   STARTER_HERO_TITLE_2: '將故事化為設計語言，讓品牌與使用者建立更深的連結', // 英雄区文字
   // 英雄区两个按钮，如果TEXT留空则隐藏按钮
   STARTER_HERO_BUTTON_1_TEXT: '聯絡我', // 英雄区按钮
