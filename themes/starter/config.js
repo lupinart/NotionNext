@@ -10,8 +10,8 @@ const CONFIG = {
 
   // 英雄区块导航
   STARTER_HERO_ENABLE: true, // 开启英雄区
-  STARTER_HERO_TITLE_1: '插畫 × 平面 × UI/UX 設計', // 英雄区文字
-  STARTER_HERO_TITLE_2: '結合敘事插畫與專案管理，打造兼具美感與實用性的設計體驗', // 英雄区文字
+  STARTER_HERO_TITLE_1: '蔍苹視覺設計', // 英雄区文字
+  STARTER_HERO_TITLE_2: '將故事化為設計語言，讓品牌與使用者建立更深的連結', // 英雄区文字
   // 英雄区两个按钮，如果TEXT留空则隐藏按钮
   STARTER_HERO_BUTTON_1_TEXT: '聯絡我', // 英雄区按钮
   STARTER_HERO_BUTTON_1_URL:
