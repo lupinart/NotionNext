@@ -231,14 +231,14 @@ const CONFIG = {
 
   // 博客文章区块
   STARTER_BLOG_ENABLE: true, // 首页博文区块开关
-  STARTER_BLOG_TITLE: '我们的博客',
+  STARTER_BLOG_TITLE: '設計筆記',
   STARTER_BLOG_COUNT: 3, // 首页博文区块默认展示前3篇文章
-  STARTER_BLOG_TEXT_1: '最近的新闻',
+  STARTER_BLOG_TEXT_1: '最新分享',
   STARTER_BLOG_TEXT_2:
-    '这里会发布一些关于NotionNext的最新动态，包括新的动向、新的未来计划，以及新功能的特性',
+    '我會在這裡記錄設計過程、研究筆記與靈感等雜七雜八的東西。',
 
   // 联系模块
-  STARTER_CONTACT_ENABLE: true, // 联系模块开关
+  STARTER_CONTACT_ENABLE: false, // 联系模块开关
   STARTER_CONTACT_TITLE: '聯絡我',
   STARTER_CONTACT_TEXT: '有合作需求或想聊聊設計嗎？歡迎透過以下方式與我聯繫',
   STARTER_CONTACT_LOCATION_TITLE: '我们的位置',
@@ -247,7 +247,7 @@ const CONFIG = {
   STARTER_CONTACT_EMAIL_TEXT: 'lupinart1008@gmail.com',
 
   // 嵌入外部表单
-  STARTER_CONTACT_MSG_EXTERNAL_URL: 'https://noteforms.com/forms/yfctc7', // 基于NoteForm创建，将留言数据存在Notion中
+  STARTER_CONTACT_MSG_EXTERNAL_URL: '', // 基于NoteForm创建，将留言数据存在Notion中
   //   自定义留言表单，以下几个配置暂时废弃
   //   STARTER_CONTACT_MSG_TITLE: '留言',
   //   STARTER_CONTACT_MSG_NAME: '姓名',
