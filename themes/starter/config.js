@@ -21,8 +21,8 @@ const CONFIG = {
   STARTER_HERO_BUTTON_2_ICON: '/images/starter/github.svg', // 英雄区按钮2的图标，不需要则留空
 
   // 英雄区配图，如需隐藏，改为空值即可 ''
-  STARTER_HERO_PREVIEW_IMAGE: 'https://www.notion.so/hiiragistudio/EDM-IPTECH-22914587c7848088a25cce3777235b43?v=21114587c78480d68eac000c35ed752d&source=copy_link#22a14587c784804d9553cabfad2d666a', // 产品预览图 ，默认读取public目录下图片images/starter/hero/hero-image.webp
-  STARTER_HERO_BANNER_IMAGE: 'https://www.notion.so/hiiragistudio/EDM-IPTECH-22914587c7848088a25cce3777235b43?v=21114587c78480d68eac000c35ed752d&source=copy_link#22a14587c784804d9553cabfad2d666a', // hero区下方的全宽图
+  STARTER_HERO_PREVIEW_IMAGE: '', // 产品预览图 ，默认读取public目录下图片images/starter/hero/hero-image.webp
+  STARTER_HERO_BANNER_IMAGE: '', // hero区下方的全宽图
 
   // 顶部右侧导航暗流
   STARTER_NAV_BUTTON_1_TEXT: '',
