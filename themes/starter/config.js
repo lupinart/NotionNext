@@ -356,7 +356,7 @@ const CONFIG = {
   // 页面底部的行动呼吁模块
   STARTER_CTA_ENABLE: true,
   STARTER_CTA_TITLE: '準備好開始專屬設計了嗎？',
-  STARTER_CTA_TITLE_2: '現在就聯絡我',
+  STARTER_CTA_TITLE_2: '',
   STARTER_CTA_DESCRIPTION:
     '無論是插畫、平面設計，還是 UI/UX 介面，我都能協助你把想法轉化為具體作品。點擊下方按鈕，開始討論你的專案吧！',
   STARTER_CTA_BUTTON: true, // 是否显示按钮
