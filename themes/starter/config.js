@@ -349,20 +349,20 @@ const CONFIG = {
   STARTER_FOOTER_PRIVACY_TERMS_OF_SERVICE_URL: '/terms-of-use',
 
   // 404页面的提示语
-  STARTER_404_TITLE: '我们似乎找不到您要找的页面。',
+  STARTER_404_TITLE: '我們似乎找不到你要找的頁面。',
   STARTER_404_TEXT: '抱歉！您要查找的页面不存在。可能已经移动或删除。',
   STARTER_404_BACK: '回到主页',
 
   // 页面底部的行动呼吁模块
-  STARTER_CTA_ENABLE: false,
-  STARTER_CTA_TITLE: '你还在等待什么呢？',
-  STARTER_CTA_TITLE_2: '现在开始吧',
+  STARTER_CTA_ENABLE: true,
+  STARTER_CTA_TITLE: '準備好開始專屬設計了嗎？',
+  STARTER_CTA_TITLE_2: '現在就聯絡我',
   STARTER_CTA_DESCRIPTION:
-    '访问NotionNext的操作文档，我们提供了详细的教程，帮助你即刻搭建站点',
+    '無論是插畫、平面設計，還是 UI/UX 介面，我都能協助你把想法轉化為具體作品。點擊下方按鈕，開始討論你的專案吧！',
   STARTER_CTA_BUTTON: true, // 是否显示按钮
   STARTER_CTA_BUTTON_URL:
-    'https://docs.tangly1024.com/article/vercel-deploy-notion-next',
-  STARTER_CTA_BUTTON_TEXT: '开始体验',
+    'mailto:lupinart1008@gmail.com',
+  STARTER_CTA_BUTTON_TEXT: '預約設計',
 
   STARTER_POST_REDIRECT_ENABLE: true, // 默認開啟重定向
   STARTER_POST_REDIRECT_URL: 'https://www.lupinvisual.com/', // 重定向域名
