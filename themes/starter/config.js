@@ -10,14 +10,14 @@ const CONFIG = {
 
   // 英雄区块导航
   STARTER_HERO_ENABLE: true, // 开启英雄区
-  STARTER_HERO_TITLE_1: '开源且免费的基于 Notion 笔记的网站构建工具', // 英雄区文字
-  STARTER_HERO_TITLE_2: '通过笔记无感知地建站、成倍放大您的价值', // 英雄区文字
+  STARTER_HERO_TITLE_1: '插畫 × 平面 × UI/UX 設計', // 英雄区文字
+  STARTER_HERO_TITLE_2: '結合敘事插畫與專案管理，打造兼具美感與實用性的設計體驗', // 英雄区文字
   // 英雄区两个按钮，如果TEXT留空则隐藏按钮
-  STARTER_HERO_BUTTON_1_TEXT: '开始体验', // 英雄区按钮
+  STARTER_HERO_BUTTON_1_TEXT: '聯絡我', // 英雄区按钮
   STARTER_HERO_BUTTON_1_URL:
-    'https://docs.tangly1024.com/article/vercel-deploy-notion-next', // 英雄区按钮
-  STARTER_HERO_BUTTON_2_TEXT: '在Github上关注', // 英雄区按钮
-  STARTER_HERO_BUTTON_2_URL: 'https://github.com/tangly1024/NotionNext', // 英雄区按钮
+    'lupinart1008@gmail.com', // 英雄区按钮
+  STARTER_HERO_BUTTON_2_TEXT: '追蹤IG', // 英雄区按钮
+  STARTER_HERO_BUTTON_2_URL: 'https://www.instagram.com/painter_lupin?igsh=ZDRla25tdjNra2l6', // 英雄区按钮
   STARTER_HERO_BUTTON_2_ICON: '/images/starter/github.svg', // 英雄区按钮2的图标，不需要则留空
 
   // 英雄区配图，如需隐藏，改为空值即可 ''
@@ -33,44 +33,44 @@ const CONFIG = {
 
   // 特性区块
   STARTER_FEATURE_ENABLE: true, // 特性区块开关
-  STARTER_FEATURE_TITLE: '特性', // 特性
-  STARTER_FEATURE_TEXT_1: 'NotionNext的主要特性', // 特性
+  STARTER_FEATURE_TITLE: '專業領域', // 特性
+  STARTER_FEATURE_TEXT_1: '我的設計核心', // 特性
   STARTER_FEATURE_TEXT_2:
-    'NotionNext的愿景是帮助您简单、无感知地稳定地搭建自己的网站，放大品牌的价值。 ', // 特性
+    '從敘事插畫到 UI/UX，我將故事、美感與專案管理結合，提供完整的設計解決方案。 ', // 特性
 
-  STARTER_FEATURE_1_TITLE_1: '免费且开源', // 特性1
-  STARTER_FEATURE_1_TEXT_1: '项目源码在Github上完全开放共享，遵循MIT协议', // 特性1
-  STARTER_FEATURE_1_BUTTON_TEXT: '了解更多', // 特性1
-  STARTER_FEATURE_1_BUTTON_URL: 'https://github.com/tangly1024/NotionNext', // 特性1
+  STARTER_FEATURE_1_TITLE_1: '敘事插畫', // 特性1
+  STARTER_FEATURE_1_TEXT_1: '專注於情感與故事性的插畫創作，適合品牌延伸與商業應用。', // 特性1
+  STARTER_FEATURE_1_BUTTON_TEXT: '', // 特性1
+  STARTER_FEATURE_1_BUTTON_URL: '', // 特性1
 
-  STARTER_FEATURE_2_TITLE_1: '多种主题定制', // 特性2
-  STARTER_FEATURE_2_TEXT_1: '数十种主题,适用于不同场景，总有一款适合你', // 特性2
-  STARTER_FEATURE_2_BUTTON_TEXT: '了解更多', // 特性2
+  STARTER_FEATURE_2_TITLE_1: '平面設計', // 特性2
+  STARTER_FEATURE_2_TEXT_1: '以清晰資訊傳達為核心，涵蓋品牌識別、出版與行銷設計。', // 特性2
+  STARTER_FEATURE_2_BUTTON_TEXT: '', // 特性2
   STARTER_FEATURE_2_BUTTON_URL:
-    'https://docs.tangly1024.com/article/notion-next-themes', // 特性2
+    '', // 特性2
 
-  STARTER_FEATURE_3_TITLE_1: '优秀的性能', // 特性3
-  STARTER_FEATURE_3_TEXT_1: '基于NextJS开发，更快的响应速度，更好的SEO', // 特性3
-  STARTER_FEATURE_3_BUTTON_TEXT: '了解更多', // 特性3
-  STARTER_FEATURE_3_BUTTON_URL: 'https://docs.tangly1024.com/article/next-js', // 特性3
+  STARTER_FEATURE_3_TITLE_1: 'UI/UX 設計', // 特性3
+  STARTER_FEATURE_3_TEXT_1: '研究遊戲化互動與高齡 UX，設計直覺且友善的數位產品體驗。', // 特性3
+  STARTER_FEATURE_3_BUTTON_TEXT: '', // 特性3
+  STARTER_FEATURE_3_BUTTON_URL: '', // 特性3
 
-  STARTER_FEATURE_4_TITLE_1: '便捷的写作体验', // 特性4
-  STARTER_FEATURE_4_TEXT_1: '只需在Notion笔记中编修，自动同步到网站', // 特性4
-  STARTER_FEATURE_4_BUTTON_TEXT: '了解更多', // 特性4
-  STARTER_FEATURE_4_BUTTON_URL: 'https://docs.tangly1024.com/about', // 特性4
+  STARTER_FEATURE_4_TITLE_1: '專案管理', // 特性4
+  STARTER_FEATURE_4_TEXT_1: '能獨立規劃與執行設計專案，並透過良好溝通促進團隊合作。', // 特性4
+  STARTER_FEATURE_4_BUTTON_TEXT: '', // 特性4
+  STARTER_FEATURE_4_BUTTON_URL: '', // 特性4
 
   // 首页ABOUT区块
   STARTER_ABOUT_ENABLE: true, // ABOUT区块开关
-  STARTER_ABOUT_TITLE: '一套轻量实用的建站解决方案',
+  STARTER_ABOUT_TITLE: '關於我',
   STARTER_ABOUT_TEXT:
-    'NotionNext的愿景是帮助非技术人员的小白，最低成本、最快速地搭建自己的网站，帮助您将自己的产品与故事高效地传达给世界。 <br /> <br /> 功能强大的Notion笔记，简单快速的Vercel托管平台，组成一个简单的网站',
+    '嗨，我是 Lupin Yu，一位插畫、平面與互動設計師。<br/><br/>專注於敘事插畫、品牌識別與 UI/UX 設計，具備專案管理與跨部門協作能力，善於也樂於學習新知，將創意與方法轉化為兼具美感與實用性的成果。',
   STARTER_ABOUT_BUTTON_TEXT: '了解更多',
   STARTER_ABOUT_BUTTON_URL: 'https://docs.tangly1024.com/about',
   STARTER_ABOUT_IMAGE_1: '/images/starter/about/about-image-01.jpg',
   STARTER_ABOUT_IMAGE_2: '/images/starter/about/about-image-02.jpg',
-  STARTER_ABOUT_TIPS_1: '7000+',
-  STARTER_ABOUT_TIPS_2: '博客站点',
-  STARTER_ABOUT_TIPS_3: '正在线上运行',
+  STARTER_ABOUT_TIPS_1: '60+',
+  STARTER_ABOUT_TIPS_2: '設計專案',
+  STARTER_ABOUT_TIPS_3: '完成交付',
 
   // 首页价格区块
   STARTER_PRICING_ENABLE: false, // 价格区块开关
@@ -249,16 +249,16 @@ const CONFIG = {
   // 嵌入外部表单
   STARTER_CONTACT_MSG_EXTERNAL_URL: 'https://noteforms.com/forms/yfctc7', // 基于NoteForm创建，将留言数据存在Notion中
   //   自定义留言表单，以下几个配置暂时废弃
-  //   STARTER_CONTACT_MSG_TITLE: '向我们留言',
+  //   STARTER_CONTACT_MSG_TITLE: '留言',
   //   STARTER_CONTACT_MSG_NAME: '姓名',
-  //   STARTER_CONTACT_MSG_EMAIL: '邮箱地址',
-  //   STARTER_CONTACT_MSG_PHONE: '联系电话',
-  //   STARTER_CONTACT_MSG_TEXT: '消息内容',
-  //   STARTER_CONTACT_MSG_SEND: '发送消息',
-  //   STARTER_CONTACT_MSG_THANKS: '感谢您的留言',
+  //   STARTER_CONTACT_MSG_EMAIL: 'email',
+  //   STARTER_CONTACT_MSG_PHONE: '電話',
+  //   STARTER_CONTACT_MSG_TEXT: '内容',
+  //   STARTER_CONTACT_MSG_SEND: '送出',
+  //   STARTER_CONTACT_MSG_THANKS: '感謝您的留言',
 
   // 合作伙伴的图标
-  STARTER_BRANDS_ENABLE: true, // 合作伙伴开关
+  STARTER_BRANDS_ENABLE: false, // 合作伙伴开关
   STARTER_BRANDS: [
     {
       IMAGE: '/images/starter/brands/graygrids.svg',
@@ -297,7 +297,7 @@ const CONFIG = {
   // 页脚三列菜单组
   STARTER_FOOTER_LINK_GROUP: [
     {
-      TITLE: '关于我们',
+      TITLE: '快速導覽',
       LINK_GROUP: [
         { TITLE: '官方主页', URL: '/#home' },
         { TITLE: '操作文档', URL: 'https://docs.tangly1024.com/about' },
