@@ -15,7 +15,7 @@ const CONFIG = {
   // 英雄区两个按钮，如果TEXT留空则隐藏按钮
   STARTER_HERO_BUTTON_1_TEXT: '預約設計', // 英雄区按钮
   STARTER_HERO_BUTTON_1_URL:
-    'lupinart1008@gmail.com', // 英雄区按钮
+    'mailto:lupinart1008@gmail.com', // 英雄区按钮
   STARTER_HERO_BUTTON_2_TEXT: '追蹤IG', // 英雄区按钮
   STARTER_HERO_BUTTON_2_URL: 'https://www.instagram.com/painter_lupin?igsh=ZDRla25tdjNra2l6', // 英雄区按钮
   STARTER_HERO_BUTTON_2_ICON: '/images/starter/github.svg', // 英雄区按钮2的图标，不需要则留空
@@ -65,13 +65,13 @@ const CONFIG = {
   STARTER_ABOUT_TEXT:
     '嗨，我是 Lupin，一位插畫、平面與互動設計師。<br/><br/>我喜歡把情感轉化成畫面，透過插畫與設計，把故事說得有溫度也有力量。<br/>一路走來，我不只專注於 插畫 × 平面 × UI/UX，也在專案管理與團隊協作中找到更多設計的價值。<br/>在這裡，我想紀錄自己與設計的對話，分享每一次嘗試與突破，讓設計不只是作品，而是一種能被感受與使用的體驗。<br/>如果你也想透過設計傳達自己的價值，或許我們可以一起創造更多可能。',
   
-  STARTER_ABOUT_BUTTON_TEXT: '了解更多',
-  STARTER_ABOUT_BUTTON_URL: 'https://docs.tangly1024.com/about',
+  STARTER_ABOUT_BUTTON_TEXT: '預約設計',
+  STARTER_ABOUT_BUTTON_URL: 'mailto:lupinart1008@gmail.com',
   STARTER_ABOUT_IMAGE_1: '/images/starter/about/about-image-01.jpg',
   STARTER_ABOUT_IMAGE_2: '/images/starter/about/about-image-02.jpg',
-  STARTER_ABOUT_TIPS_1: '60+',
-  STARTER_ABOUT_TIPS_2: '設計專案',
-  STARTER_ABOUT_TIPS_3: '完成交付',
+  STARTER_ABOUT_TIPS_1: '',
+  STARTER_ABOUT_TIPS_2: '跨域設計',
+  STARTER_ABOUT_TIPS_3: '穩定交付',
 
   // 首页价格区块
   STARTER_PRICING_ENABLE: false, // 价格区块开关
