@@ -8,18 +8,6 @@
 const Style = () => {
   return <style jsx global>{`
 
-    #theme-starter section#about{
-      padding-top: 40px !important;   /* 原本 pt-20 ≈ 80px */
-      padding-bottom: 20px !important;/* 原本 pb-8  ≈ 32px */
-    }
-    /* 大螢幕（lg）再調更小或維持一致 */
-    @media (min-width:1024px){
-      #theme-starter section#about{
-        padding-top: 60px !important;   /* 原本 lg:pt-[120px] */
-        padding-bottom: 40px !important;/* 原本 lg:pb-[70px]  */
-      }
-    }
-
   #theme-starter .sticky{
     position: fixed;
     z-index: 20;
