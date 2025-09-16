@@ -18,7 +18,7 @@ const BLOG = {
   BIO: process.env.NEXT_PUBLIC_BIO || '一个普通的設計人', // 作者简介
   LINK: process.env.NEXT_PUBLIC_LINK || 'https://www.lupinvisual.com/', // 网站地址
   KEYWORDS: process.env.NEXT_PUBLIC_KEYWORD || '插畫設計, 敘事插畫, 商業插畫, 平面設計, 品牌設計, 視覺設計, UI設計, UX設計, 使用者體驗設計, 介面設計, 互動設計, 簡報設計, 投影片設計, 影片剪輯, 動態設計, 專案管理, 設計專案管理, 敘事設計,illustration, narrative illustration, commercial illustration, graphic design, brand design, visual design, UI design, UX design, UI/UX designer, interaction design, product design, presentation design, slide design, motion design, video editing, project management, creative project management, design project management, storytelling design,イラスト, イラスト制作, ナラティブイラスト, 商業イラスト, グラフィックデザイン, ブランドデザイン, ビジュアルデザイン, UIデザイン, UXデザイン, UI/UXデザイナー, インタラクションデザイン, プロダクトデザイン, プレゼンテーションデザイン, スライドデザイン, モーションデザイン, 映像編集, プロジェクト管理, デザインプロジェクト管理, ストーリーテリングデザイン', // 网站关键词 英文逗号隔开
-  BLOG_FAVICON: process.env.NEXT_PUBLIC_FAVICON || '/favicon.ico', // blog favicon 配置, 默认使用 /public/favicon.ico，支持在线图片，如 https://img.imesong.com/favicon.png
+  BLOG_FAVICON: process.env.NEXT_PUBLIC_FAVICON || '/favicon.ico',, // blog favicon 配置, 默认使用 /public/favicon.ico，支持在线图片，如 https://img.imesong.com/favicon.png
   BEI_AN: process.env.NEXT_PUBLIC_BEI_AN || '', // 备案号 闽ICP备XXXXXX
   BEI_AN_LINK: process.env.NEXT_PUBLIC_BEI_AN_LINK || '', // 备案查询链接，如果用了萌备等备案请在这里填写
   BEI_AN_GONGAN: process.env.NEXT_PUBLIC_BEI_AN_GONGAN || '', // 公安备案号，例如 '浙公网安备3xxxxxxxx8号'
