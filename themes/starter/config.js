@@ -304,7 +304,7 @@ const CONFIG = {
         { TITLE: 'About', URL: '/about' },
         {
           TITLE: 'Blog',
-          URL: '/archoive'
+          URL: '/archive'
         },
       ]
     },
