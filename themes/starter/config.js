@@ -17,7 +17,7 @@ const CONFIG = {
   STARTER_HERO_BUTTON_1_URL:
     'mailto:lupinart1008@gmail.com', // 英雄区按钮
   STARTER_HERO_BUTTON_2_TEXT: '追蹤IG', // 英雄区按钮
-  STARTER_HERO_BUTTON_2_URL: 'https://www.instagram.com/painter_lupin?igsh=ZDRla25tdjNra2l6', // 英雄区按钮
+  STARTER_HERO_BUTTON_2_URL: 'https://www.instagram.com/lupin_visual/#', // 英雄区按钮
   STARTER_HERO_BUTTON_2_ICON: '/images/starter/github.svg', // 英雄区按钮2的图标，不需要则留空
 
   // 英雄区配图，如需隐藏，改为空值即可 ''
@@ -50,7 +50,7 @@ const CONFIG = {
     '', // 特性2
 
   STARTER_FEATURE_3_TITLE_1: 'UI/UX 設計', // 特性3
-  STARTER_FEATURE_3_TEXT_1: '研究遊戲化互動與高齡 UX，設計直覺且友善的數位產品體驗。', // 特性3
+  STARTER_FEATURE_3_TEXT_1: '研究遊戲化互動與UX使用堤驗，設計直覺且友善的數位產品體驗。', // 特性3
   STARTER_FEATURE_3_BUTTON_TEXT: '', // 特性3
   STARTER_FEATURE_3_BUTTON_URL: '', // 特性3
 
@@ -313,13 +313,13 @@ const CONFIG = {
       LINK_GROUP: [
         {
           TITLE: '插畫',
-          URL: 'https://docs.tangly1024.com/article/vercel-deploy-notion-next'
+          URL: 'https://thirsty-carriage-321.notion.site/Illustration-works-26e5d9d82811819fb2c8c2411c88eae5'
         },
         {
           TITLE: '設計',
-          URL: 'https://docs.tangly1024.com/article/how-to-update-notionnext'
+          URL: 'https://thirsty-carriage-321.notion.site/Graphic-Design-26f5d9d8281180f48993d25adaceac09'
         },
-        { TITLE: 'UI/UX', URL: 'https://docs.tangly1024.com/article/latest' }
+        { TITLE: 'UI/UX', URL: 'https://thirsty-carriage-321.notion.site/UI-UI-Design-26f5d9d8281180c29c4aeec83fc09f49' }
       ]
     },
     {
@@ -331,7 +331,7 @@ const CONFIG = {
         },
         {
           TITLE: 'IG',
-          URL: 'https://www.instagram.com/painter_lupin?igsh=ZDRla25tdjNra2l6'
+          URL: 'https://www.instagram.com/lupin_visual/#'
         },
       ]
     }
