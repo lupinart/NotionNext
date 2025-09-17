@@ -3,11 +3,10 @@
   width="24"
   height="24"
   viewBox="0 0 24 24"
-  fill="currentColor"
+  fill="white"
   xmlns="http://www.w3.org/2000/svg"
   aria-hidden="true"
 >
-  <!-- 加了一個縮放與平移，讓圖案小一點並居中 -->
   <g transform="scale(0.85) translate(2 2)">
     <path d="M17 2H7a5 5 0 0 0-5 5v10a5 5 0 0 0 5 5h10a5 5 0 0 0 5-5V7a5 5 0 0 0-5-5Zm-5 15a5 5 0 1 1 0-10 5 5 0 0 1 0 10Zm5.35-9.38a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"/>
     <circle cx="12" cy="12" r="3"/>
