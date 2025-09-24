@@ -2,45 +2,44 @@
 /* eslint-disable @next/next/no-img-element */
 
 'use client'
-import Comment from '@/components/Comment'
 import Loading from '@/components/Loading'
-import replaceSearchResult from '@/components/Mark'
 import NotionPage from '@/components/NotionPage'
-import ShareBar from '@/components/ShareBar'
-import SmartLink from '@/components/SmartLink'
-import DashboardBody from '@/components/ui/dashboard/DashboardBody'
-import DashboardHeader from '@/components/ui/dashboard/DashboardHeader'
 import { siteConfig } from '@/lib/config'
-import { useGlobal } from '@/lib/global'
-import { loadWowJS } from '@/lib/plugins/wow'
 import { isBrowser } from '@/lib/utils'
-import { SignIn, SignUp } from '@clerk/nextjs'
-import { useEffect, useMemo } from 'react'
 import { useRouter } from 'next/router'
+import { useEffect } from 'react'
 import { About } from './components/About'
-import { ArticleLock } from './components/ArticleLock'
 import { BackToTopButton } from './components/BackToTopButton'
-import { Banner } from './components/Banner'
 import { Blog } from './components/Blog'
 import { Brand } from './components/Brand'
-import CategoryFilter from './components/CategoryFilter'
 import { Contact } from './components/Contact'
-import { CTA } from './components/CTA'
 import { FAQ } from './components/FAQ'
 import { Features } from './components/Features'
 import { Footer } from './components/Footer'
 import { Header } from './components/Header'
 import { Hero } from './components/Hero'
 import { Pricing } from './components/Pricing'
-import SearchInput from './components/SearchInput'
-import { SignInForm } from './components/SignInForm'
-import { SignUpForm } from './components/SignUpForm'
-import { SVG404 } from './components/svg/SVG404'
 import { Team } from './components/Team'
 import { Testimonials } from './components/Testimonials'
 import CONFIG from './config'
 import { Style } from './style'
 // import { MadeWithButton } from './components/MadeWithButton'
+import Comment from '@/components/Comment'
+import replaceSearchResult from '@/components/Mark'
+import ShareBar from '@/components/ShareBar'
+import DashboardBody from '@/components/ui/dashboard/DashboardBody'
+import DashboardHeader from '@/components/ui/dashboard/DashboardHeader'
+import { useGlobal } from '@/lib/global'
+import { loadWowJS } from '@/lib/plugins/wow'
+import { SignIn, SignUp } from '@clerk/nextjs'
+import SmartLink from '@/components/SmartLink'
+import { ArticleLock } from './components/ArticleLock'
+import { Banner } from './components/Banner'
+import { CTA } from './components/CTA'
+import SearchInput from './components/SearchInput'
+import { SignInForm } from './components/SignInForm'
+import { SignUpForm } from './components/SignUpForm'
+import { SVG404 } from './components/svg/SVG404'
 
 /**
  * 布局框架
@@ -51,48 +50,49 @@ import { Style } from './style'
  * @returns
  */
 const LayoutBase = props => {
-  const { children } = props
-  // 极简模式，会隐藏掉页头页脚等组件，便于嵌入网页等功能
-  const { isLiteMode } = useGlobal()
-  const router = useRouter()
+    const { children } = props
+    // 极简模式，会隐藏掉页头页脚等组件，便于嵌入网页等功能 
+    const { isLiteMode } = useGlobal()
+    const router = useRouter()
 
-  // 加载wow动画
-  useEffect(() => {
-    loadWowJS()
-  }, [])
+    // 加载wow动画
+    useEffect(() => {
+        loadWowJS()
+    }, [])
 
-  // 特殊简化布局，如果识别到路由中有 ?lite=true，则给网页添加一些自定义的css样式，例如背景改成黑色
-  useEffect(() => {
-    const isLiteMode = router.query.lite === 'true'
-    console.log(router.query.lite, isLiteMode)
-    if (isLiteMode) {
-      document.body.style.backgroundColor = 'black'
-      document.body.style.color = 'white'
-    }
-  }, [router.query])
+    // 特殊简化布局，如果识别到路由中有 ?lite=true，则给网页添加一些自定义的css样式，例如背景改成黑色
+    useEffect(() => {
+        const isLiteMode = router.query.lite === 'true'
+        console.log(router.query.lite, isLiteMode)
+        if (isLiteMode) {
+            document.body.style.backgroundColor = 'black'
+            document.body.style.color = 'white'
+        }
+    }, [])
 
-  return (
-    <div
-      id='theme-starter'
-      className={`${siteConfig('FONT_STYLE')} min-h-screen flex flex-col dark:bg-[#212b36] scroll-smooth`}>
-      <Style />
+    return (
+        <div
+            id='theme-starter'
+            className={`${siteConfig('FONT_STYLE')} min-h-screen flex flex-col dark:bg-[#212b36] scroll-smooth`}>
+            <Style />
 
-      {/* 页头 */}
-      {isLiteMode ? <></> : <Header {...props} />}
+            {/* 页头 */}
+            {isLiteMode ? <></> : <Header {...props} />}
 
-      <div id='main-wrapper' className='grow'>
-        {children}
-      </div>
+            <div id='main-wrapper' className='grow'>
+                {children}
+            </div>
 
-      {/* 页脚 */}
-      {isLiteMode ? <></> : <Footer {...props} />}
+            {/* 页脚 */}
+            
+            {isLiteMode ? <></> : <Footer {...props} />}
 
-      {/* 悬浮按钮 */}
-      {isLiteMode ? <></> : <BackToTopButton />}
+            {/* 悬浮按钮 */}
+            {isLiteMode ? <></> : <BackToTopButton />}
 
-      {/* <MadeWithButton/> */}
-    </div>
-  )
+            {/* <MadeWithButton/> */}
+        </div>
+    )
 }
 
 /**
@@ -112,8 +112,8 @@ const LayoutIndex = props => {
       {siteConfig('STARTER_BRANDS_ENABLE', true, CONFIG) && <Brand />}
       {/* 关于 */}
       {siteConfig('STARTER_ABOUT_ENABLE', true, CONFIG) && <About />}
-
-      {/* 产品特性 */}
+       
+       {/* 产品特性 */}
       {siteConfig('STARTER_FEATURE_ENABLE', true, CONFIG) && <Features />}
 
       {/* 价格 */}
@@ -155,7 +155,7 @@ const LayoutIndex = props => {
 const LayoutSlug = props => {
   const { post, lock, validPassword } = props
 
-  // 如果 是 /article/[slug] 的文章路径则视情况进行重定向到另一个域名
+  // 如果 是 /article/[slug] 的文章路径则視情況进行重定向到另一个域名
   const router = useRouter()
   if (
     !post &&
@@ -245,7 +245,7 @@ const LayoutSearch = props => {
         }
       })
     }
-  }, [keyword])
+  }, [])
   return (
     <>
       <section className='max-w-7xl mx-auto bg-white pb-10 pt-20 dark:bg-dark lg:pb-20 lg:pt-[120px]'>
@@ -255,58 +255,18 @@ const LayoutSearch = props => {
     </>
   )
 }
-const LayoutArchive = props => {
-  const { posts } = props
-  const router = useRouter()
 
-  // 讀取網址上的 ?cat=
-  const activeCatRaw = router.query.cat
-  const activeCat = typeof activeCatRaw === 'string' ? decodeURIComponent(activeCatRaw) : undefined
-
-  // 彙整分類 + 依參數過濾
-  const { categories, filteredPosts } = useMemo(() => {
-    const map = new Map()
-    const list = posts || []
-
-    list.forEach(p => {
-      const name =
-        typeof p?.category === 'string'
-          ? p.category
-          : Array.isArray(p?.category) && p.category.length > 0
-          ? p.category[0]
-          : '未分類'
-      map.set(name, (map.get(name) || 0) + 1)
-    })
-
-    const categories = [...map.entries()]
-      .sort((a, b) => b[1] - a[1])
-      .map(([name, count]) => ({ name, count }))
-
-    const filteredPosts = activeCat
-      ? list.filter(p => {
-          const name =
-            typeof p?.category === 'string'
-              ? p.category
-              : Array.isArray(p?.category) && p.category.length > 0
-              ? p.category[0]
-              : '未分類'
-          return name === activeCat
-        })
-      : list
-
-    return { categories, filteredPosts }
-  }, [posts, activeCat])
-
-  return (
-    <>
-      {/* ✅ 這裡是篩選列 */}
-      <CategoryFilter categories={categories} active={activeCat} />
-
-      {/* 原本的列表，但換成篩選後的文章 */}
-      <Blog {...props} posts={filteredPosts} />
-    </>
-  )
-}
+/**
+ * 文章归档
+ * @param {*} props
+ * @returns
+ */
+const LayoutArchive = props => (
+  <>
+    {/* 博文列表 */}
+    <Blog {...props} />
+  </>
+)
 
 /**
  * 404页面
@@ -316,13 +276,17 @@ const LayoutArchive = props => {
 const Layout404 = props => {
   return (
     <>
-      {/* */}
+      {/* <!-- ====== 404 Section Start --> */}
       <section className='bg-white py-20 dark:bg-dark-2 lg:py-[110px]'>
         <div className='container mx-auto'>
           <div className='flex flex-wrap items-center -mx-4'>
             <div className='w-full px-4 md:w-5/12 lg:w-6/12'>
               <div className='text-center'>
-                <SVG404 />
+                <img
+                  src='/images/starter/404.svg'
+                  alt='image'
+                  className='max-w-full mx-auto'
+                />
               </div>
             </div>
             <div className='w-full px-4 md:w-7/12 lg:w-6/12 xl:w-5/12'>
@@ -337,3 +301,255 @@ const Layout404 = props => {
                   {siteConfig('STARTER_404_TEXT')}
                 </p>
                 <SmartLink
+                  href='/'
+                  className='py-3 text-base font-medium text-white transition rounded-md bg-dark px-7 hover:bg-primary'>
+                  {siteConfig('STARTER_404_BACK')}
+                </SmartLink>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* <!-- ====== 404 Section End --> */}
+    </>
+  )
+}
+
+/**
+ * 翻页博客列表
+ */
+const LayoutPostList = props => {
+  const { posts, category, tag } = props
+  const slotTitle = category || tag
+
+  return (
+    <>
+      {/* <!-- ====== Blog Section Start --> */}
+      <section className='bg-white pb-10 pt-20 dark:bg-dark lg:pb-20 lg:pt-[120px]'>
+        <div className='container mx-auto'>
+          {/* 区块标题文字 */}
+          <div className='-mx-4 flex flex-wrap justify-center'>
+            <div className='w-full px-4'>
+              <div className='mx-auto mb-[60px] max-w-[485px] text-center'>
+                {slotTitle && (
+                  <h2 className='mb-4 text-3xl font-bold text-dark dark:text-white sm:text-4xl md:text-[40px] md:leading-[1.2]'>
+                    {slotTitle}
+                  </h2>
+                )}
+
+                {!slotTitle && (
+                  <>
+                    <span className='mb-2 block text-lg font-semibold text-primary'>
+                      {siteConfig('STARTER_BLOG_TITLE')}
+                    </span>
+                    <h2 className='mb-4 text-3xl font-bold text-dark dark:text-white sm:text-4xl md:text-[40px] md:leading-[1.2]'>
+                      {siteConfig('STARTER_BLOG_TEXT_1')}
+                    </h2>
+                    <p
+                      dangerouslySetInnerHTML={{
+                        __html: siteConfig('STARTER_BLOG_TEXT_2')
+                      }}
+                      className='text-base text-body-color dark:text-dark-6'></p>
+                  </>
+                )}
+              </div>
+            </div>
+          </div>
+          {/* 博客列表 此处优先展示3片文章 */}
+          <div className='-mx-4 flex flex-wrap'>
+            {posts?.map((item, index) => {
+              return (
+                <div key={index} className='w-full px-4 md:w-1/2 lg:w-1/3'>
+                  <div
+                    className='wow fadeInUp group mb-10'
+                    data-wow-delay='.1s'>
+                    <div className='mb-8 overflow-hidden rounded-[5px]'>
+                      <SmartLink href={item?.href} className='block'>
+                        <img
+                          src={item.pageCoverThumbnail}
+                          alt={item.title}
+                          className='w-full transition group-hover:rotate-6 group-hover:scale-125'
+                        />
+                      </SmartLink>
+                    </div>
+                    <div>
+                      <span className='mb-6 inline-block rounded-[5px] bg-primary px-4 py-0.5 text-center text-xs font-medium leading-loose text-white'>
+                        {item.publishDay}
+                      </span>
+                      <h3>
+                        <SmartLink
+                          href={item?.href}
+                          className='mb-4 inline-block text-xl font-semibold text-dark hover:text-primary dark:text-white dark:hover:text-primary sm:text-2xl lg:text-xl xl:text-2xl'>
+                          {item.title}
+                        </SmartLink>
+                      </h3>
+                      <p className='max-w-[370px] text-base text-body-color dark:text-dark-6'>
+                        {item.summary}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              )
+            })}
+          </div>
+        </div>
+      </section>
+      {/* <!-- ====== Blog Section End --> */}
+    </>
+  )
+}
+/**
+ * 分类列表
+ * @param {*} props
+ * @returns
+ */
+const LayoutCategoryIndex = props => {
+  const { categoryOptions } = props
+  const { locale } = useGlobal()
+  return (
+    <section className='bg-white pb-10 pt-20 dark:bg-dark lg:pb-20 lg:pt-[120px]'>
+      <div className='container mx-auto  min-h-96'>
+        <span className='mb-2 text-lg font-semibold text-primary flex justify-center items-center '>
+          {locale.COMMON.CATEGORY}
+        </span>
+        <div
+          id='category-list'
+          className='duration-200 flex flex-wrap justify-center items-center '>
+          {categoryOptions?.map(category => {
+            return (
+              <SmartLink
+                key={category.name}
+                href={`/category/${category.name}`}
+                passHref
+                legacyBehavior>
+                <h2
+                  className={
+                    'hover:text-black text-2xl font-semibold text-dark sm:text-4xl md:text-[40px] md:leading-[1.2] dark:hover:text-white dark:text-gray-300 dark:hover:bg-gray-600 px-5 cursor-pointer py-2 hover:bg-gray-100'
+                  }>
+                  <i className='mr-4 fas fa-folder' />
+                  {category.name}({category.count})
+                </h2>
+              </SmartLink>
+            )
+          })}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+/**
+ * 标签列表
+ * @param {*} props
+ * @returns
+ */
+const LayoutTagIndex = props => {
+  const { tagOptions } = props
+  const { locale } = useGlobal()
+  return (
+    <section className='bg-white pb-10 pt-20 dark:bg-dark lg:pb-20 lg:pt-[120px]'>
+      <div className='container mx-auto  min-h-96'>
+        <span className='mb-2 text-lg font-semibold text-primary flex justify-center items-center '>
+          {locale.COMMON.TAGS}
+        </span>
+        <div
+          id='tags-list'
+          className='duration-200 flex flex-wrap justify-center items-center'>
+          {tagOptions.map(tag => {
+            return (
+              <div key={tag.name} className='p-2'>
+                <SmartLink
+                  key={tag}
+                  href={`/tag/${encodeURIComponent(tag.name)}`}
+                  passHref
+                  className={`cursor-pointer inline-block rounded hover:bg-gray-500 hover:text-white duration-200  mr-2 py-1 px-2 text-md whitespace-nowrap dark:hover:text-white text-gray-600 hover:shadow-xl dark:border-gray-400 notion-${tag.color}_background dark:bg-gray-800`}>
+                  <div className='font-light dark:text-gray-400'>
+                    <i className='mr-1 fas fa-tag' />{' '}
+                    {tag.name + (tag.count ? `(${tag.count})` : '')}{' '}
+                  </div>
+                </SmartLink>
+              </div>
+            )
+          })}
+        </div>
+      </div>
+    </section>
+  )
+}
+/**
+ * 登录页面
+ * @param {*} props
+ * @returns
+ */
+const LayoutSignIn = props => {
+  const enableClerk = process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY
+  const title = siteConfig('STARTER_SIGNIN', '登录')
+  const description = siteConfig(
+    'STARTER_SIGNIN_DESCRITION',
+    '这里是演示页面，NotionNext目前不提供会员登录功能'
+  )
+  return (
+    <>
+      <div className='grow mt-20'>
+        <Banner title={title} description={description} />
+        {/* clerk预置表单 */}
+        {enableClerk && (
+          <div className='flex justify-center py-6'>
+            <SignIn />
+          </div>
+        )}
+
+        {/* 自定义登录表单 */}
+        {!enableClerk && <SignInForm />}
+      </div>
+    </>
+  )
+}
+
+/**
+ * 注册页面
+ * @param {*} props
+ * @returns
+ */
+const LayoutSignUp = props => {
+  const enableClerk = process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY
+
+  const title = siteConfig('STARTER_SIGNIN', '注册')
+  const description = siteConfig(
+    'STARTER_SIGNIN_DESCRITION',
+    '这里是演示页面，NotionNext目前不提供会员注册功能'
+  )
+  return (
+    <>
+      <div className='grow mt-20'>
+        <Banner title={title} description={description} />
+
+        {/* clerk预置表单 */}
+        {enableClerk && (
+          <div className='flex justify-center py-6'>
+            <SignUp />
+          </div>
+        )}
+
+        {/* 自定义登录表单 */}
+        {!enableClerk && <SignUpForm />}
+      </div>
+    </>
+  )
+}
+
+export {
+  Layout404,
+  LayoutArchive,
+  LayoutBase,
+  LayoutCategoryIndex,
+  LayoutDashboard,
+  LayoutIndex,
+  LayoutPostList,
+  LayoutSearch,
+  LayoutSignIn,
+  LayoutSignUp,
+  LayoutSlug,
+  LayoutTagIndex,
+  CONFIG as THEME_CONFIG
+}
