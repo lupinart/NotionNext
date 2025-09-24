@@ -258,14 +258,12 @@ const LayoutSearch = props => {
 
 /**
  * 文章归档
- * @param {*} props
- * @returns
  */
 const LayoutArchive = props => {
     const { posts, category, tag } = props
     const slotTitle = category || tag
-    const router = useRouter()
 
+    const router = useRouter()
     const activeCatRaw = router.query.cat
     const activeCat = typeof activeCatRaw === 'string' ? decodeURIComponent(activeCatRaw) : undefined
 
@@ -304,6 +302,7 @@ const LayoutArchive = props => {
 
     return (
         <>
+            {/* 調整間距：使用 pt-16 和 mt-16 讓間距更遠 */}
             <section className='bg-white pb-10 dark:bg-dark lg:pb-20 pt-16 mt-16'>
                 <div className='container mx-auto'>
                     {/* 文章標題區塊 */}
