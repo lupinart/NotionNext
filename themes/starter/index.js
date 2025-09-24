@@ -381,10 +381,21 @@ const LayoutPostList = props => {
   const activeCatRaw = router.query.cat
   const activeCat = typeof activeCatRaw === 'string' ? decodeURIComponent(activeCatRaw) : undefined
 
+  // 新增：使用 useMemo 根據 activeCat 過濾文章，讓點擊後能正確顯示過濾結果
+  const filteredPosts = useMemo(() => {
+    if (!activeCat) {
+      return posts
+    }
+    return posts?.filter(p => {
+      const name = typeof p?.category === 'string' ? p.category : Array.isArray(p?.category) && p.category.length > 0 ? p.category[0] : '未分類'
+      return name === activeCat
+    })
+  }, [posts, activeCat])
+
   return (
     <>
-      {/* */}
-      <section className='bg-white pb-10 pt-20 dark:bg-dark lg:pb-20 lg:pt-[120px]'>
+      {/* 關鍵修正：添加 mt-20 來把內容推到導覽列下方 */}
+      <section className='bg-white pb-10 pt-20 dark:bg-dark lg:pb-20 lg:pt-[120px] mt-20'>
         <div className='container mx-auto'>
           {/* ✅ 新增：在博客列表上方加入分類篩選器 */}
           {siteConfig('STARTER_BLOG_ENABLE', true, CONFIG) && props.categoryOptions && <CategoryFilter categories={props.categoryOptions} active={activeCat} />}
@@ -419,7 +430,7 @@ const LayoutPostList = props => {
           </div>
           {/* 博客列表 此处优先展示3片文章 */}
           <div className='-mx-4 flex flex-wrap'>
-            {posts?.map((item, index) => {
+            {filteredPosts?.map((item, index) => { // 使用過濾後的文章列表
               return (
                 <div key={index} className='w-full px-4 md:w-1/2 lg:w-1/3'>
                   <div
@@ -456,10 +467,10 @@ const LayoutPostList = props => {
           </div>
         </div>
       </section>
-      {/* */}
     </>
   )
 }
+
 /**
  * 分类列表
  * @param {*} props
