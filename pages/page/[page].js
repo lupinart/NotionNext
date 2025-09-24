@@ -4,13 +4,14 @@ import { getGlobalData, getPostBlocks } from '@/lib/db/getSiteData'
 import { DynamicLayout } from '@/themes/theme'
 
 /**
- * 文章列表分页
+ * 文章列表分頁
  * @param {*} props
  * @returns
  */
 const Page = props => {
   const theme = siteConfig('THEME', BLOG.THEME, props.NOTION_CONFIG)
-  return <DynamicLayout theme={theme} layoutName='LayoutPostList' {...props} />
+  // ✅ 這裡改成 LayoutArchive
+  return <DynamicLayout theme={theme} layoutName='LayoutArchive' {...props} />
 }
 
 export async function getStaticPaths({ locale }) {
@@ -20,7 +21,7 @@ export async function getStaticPaths({ locale }) {
     postCount / siteConfig('POSTS_PER_PAGE', null, NOTION_CONFIG)
   )
   return {
-    // remove first page, we 're not gonna handle that.
+    // 第一頁不處理，從第 2 頁開始
     paths: Array.from({ length: totalPages - 1 }, (_, i) => ({
       params: { page: '' + (i + 2) }
     })),
@@ -42,14 +43,15 @@ export async function getStaticProps({ params: { page }, locale }) {
     page => page.type === 'Post' && page.status === 'Published'
   )
   const POSTS_PER_PAGE = siteConfig('POSTS_PER_PAGE', 12, props?.NOTION_CONFIG)
-  // 处理分页
+
+  // 分頁
   props.posts = allPosts.slice(
     POSTS_PER_PAGE * (page - 1),
     POSTS_PER_PAGE * page
   )
   props.page = page
 
-  // 处理预览
+  // 預覽處理
   if (siteConfig('POST_LIST_PREVIEW', false, props?.NOTION_CONFIG)) {
     for (const i in props.posts) {
       const post = props.posts[i]
