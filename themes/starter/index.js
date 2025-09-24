@@ -325,6 +325,7 @@ const LayoutArchive = props => {
     );
 };
 
+
 /**
  * 404页面
  * @param {*} props
@@ -337,7 +338,7 @@ const Layout404 = props => {
             <section className='bg-white py-20 dark:bg-dark-2 lg:py-[110px]'>
                 <div className='container mx-auto'>
                     <div className='flex flex-wrap items-center -mx-4'>
-                        <div className='w-full px-4 md:w-5/12 lg:w-6/12'>
+                        <div className='w-full px-4 md:w-5/2 lg:w-6/2'>
                             <div className='text-center'>
                                 <img
                                     src='/images/starter/404.svg'
@@ -346,7 +347,7 @@ const Layout404 = props => {
                                 />
                             </div>
                         </div>
-                        <div className='w-full px-4 md:w-7/12 lg:w-6/12 xl:w-5/12'>
+                        <div className='w-full px-4 md:w-7/2 lg:w-6/2 xl:w-5/2'>
                             <div>
                                 <div className='mb-8'>
                                     <SVG404 />
