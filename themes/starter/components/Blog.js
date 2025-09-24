@@ -11,7 +11,7 @@ export const Blog = ({ posts = [], headerSlot = null }) => {
   return (
     <>
       {/* <!-- ====== Blog Section Start --> */}
-      <section className="bg-white pb-10 dark:bg-dark lg:pb-20">
+      <section className="bg-white pb-10 pt-4 dark:bg-dark lg:pb-20 lg:pt-[30px]">
         <div className='container mx-auto'>
           {/* 區塊標題與說明 */}
           <div className='-mx-4 flex flex-wrap justify-center'>
