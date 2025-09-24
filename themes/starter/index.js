@@ -412,6 +412,6 @@ export {
   LayoutSlug,
   LayoutTagIndex,
   CONFIG as THEME_CONFIG,
-  LayoutBlogAndArchive as LayoutArchive,
-  LayoutBlogAndArchive as LayoutPostList // ⚠️ 請勿在同一頁同時使用這兩個別名，以免標題重複
+  LayoutBlogAndArchive as LayoutArchive
 }
+
