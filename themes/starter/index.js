@@ -223,6 +223,7 @@ const LayoutBlogAndArchive = props => {
     const categories = [...map.entries()]
       .sort((a, b) => b[1] - a[1])
       .map(([name, count]) => ({ name, count }))
+
     const filteredPosts = activeCat
       ? list.filter(p => {
           const name =
@@ -234,6 +235,7 @@ const LayoutBlogAndArchive = props => {
           return name === activeCat
         })
       : list
+
     return { categories, filteredPosts }
   }, [posts, activeCat])
 
@@ -243,27 +245,23 @@ const LayoutBlogAndArchive = props => {
         <div className='-mx-4 flex flex-wrap justify-center'>
           <div className='w-full px-4'>
             <div className='mx-auto mb-6 max-w-[485px] text-center'>
-              {slotTitle ? (
+
+              {/* ✅ 只有在有分類或標籤時才渲染外層標題，避免和 Blog 內部標題重複 */}
+              {slotTitle && (
                 <h2 className='mb-4 text-3xl font-bold text-dark dark:text-white sm:text-4xl md:text-[40px] md:leading-[1.2]'>
                   {slotTitle}
                 </h2>
-              ) : (
-                <>
-                  <span className='mb-2 block text-lg font-semibold text-primary'>
-                    {siteConfig('STARTER_BLOG_TITLE')}
-                  </span>
-                  <h2 className='mb-4 text-3xl font-bold text-dark dark:text-white sm:text-4xl md:text-[40px] md:leading-[1.2]'>
-                    {siteConfig('STARTER_BLOG_TEXT_1')}
-                  </h2>
-                  <p
-                    dangerouslySetInnerHTML={{ __html: siteConfig('STARTER_BLOG_TEXT_2') }}
-                    className='text-base text-body-color dark:text-dark-6'></p>
-                </>
               )}
+
+              {/* 沒有 slotTitle（一般 /archive 與 /page/X）時，不渲染任何外層標題，交給 <Blog /> 自己處理 */}
             </div>
           </div>
         </div>
+
+        {/* 你要放在標題之下的膠囊 */}
         <CategoryFilter categories={categories} active={activeCat} />
+
+        {/* 文章列表 */}
         <Blog {...props} posts={filteredPosts} />
       </div>
     </section>
