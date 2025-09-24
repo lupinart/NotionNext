@@ -122,7 +122,7 @@ const Style = () => {
   
   #theme-starter .sticky #themeSwitcher ~ span{
     --tw-text-opacity: 1;
-    color: rgb(17 25 40 / var(--tw-text-opacity));
+    color: rgb(17 25 40 / var(--tw-bg-opacity));
   }
   
   :is(.dark #theme-starter .sticky #themeSwitcher ~ span){
