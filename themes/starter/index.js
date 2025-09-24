@@ -41,6 +41,10 @@ import { SignInForm } from './components/SignInForm'
 import { SignUpForm } from './components/SignUpForm'
 import { SVG404 } from './components/svg/SVG404'
 
+import { useMemo } from 'react'
+import { useRouter } from 'next/router'
+import CategoryFilter from './components/CategoryFilter'
+
 /**
  * 布局框架
  * Landing-2 主题用作产品落地页展示
@@ -255,18 +259,58 @@ const LayoutSearch = props => {
     </>
   )
 }
+const LayoutArchive = props => {
+  const { posts } = props
+  const router = useRouter()
 
-/**
- * 文章归档
- * @param {*} props
- * @returns
- */
-const LayoutArchive = props => (
-  <>
-    {/* 博文列表 */}
-    <Blog {...props} />
-  </>
-)
+  // 讀取網址上的 ?cat=
+  const activeCatRaw = router.query.cat
+  const activeCat = typeof activeCatRaw === 'string' ? decodeURIComponent(activeCatRaw) : undefined
+
+  // 彙整分類 + 依參數過濾
+  const { categories, filteredPosts } = useMemo(() => {
+    const map = new Map()
+    const list = posts || []
+
+    list.forEach(p => {
+      const name =
+        typeof p?.category === 'string'
+          ? p.category
+          : Array.isArray(p?.category) && p.category.length > 0
+          ? p.category[0]
+          : '未分類'
+      map.set(name, (map.get(name) || 0) + 1)
+    })
+
+    const categories = [...map.entries()]
+      .sort((a, b) => b[1] - a[1])
+      .map(([name, count]) => ({ name, count }))
+
+    const filteredPosts = activeCat
+      ? list.filter(p => {
+          const name =
+            typeof p?.category === 'string'
+              ? p.category
+              : Array.isArray(p?.category) && p.category.length > 0
+              ? p.category[0]
+              : '未分類'
+          return name === activeCat
+        })
+      : list
+
+    return { categories, filteredPosts }
+  }, [posts, activeCat])
+
+  return (
+    <>
+      {/* ✅ 這裡是篩選列 */}
+      <CategoryFilter categories={categories} active={activeCat} />
+
+      {/* 原本的列表，但換成篩選後的文章 */}
+      <Blog {...props} posts={filteredPosts} />
+    </>
+  )
+}
 
 /**
  * 404页面
