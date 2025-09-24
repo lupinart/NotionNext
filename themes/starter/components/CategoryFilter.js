@@ -1,3 +1,4 @@
+// themes/starter/components/CategoryFilter.js
 import { useRouter } from "next/router";
 
 export default function CategoryFilter({ categories = [], active }) {
@@ -18,7 +19,7 @@ export default function CategoryFilter({ categories = [], active }) {
   };
 
   return (
-    <div className="absolute top-60 left-0 right-0 z-10 flex flex-wrap items-center justify-center gap-2 mt-2 mb-6 px-4">
+    <div className="flex flex-wrap items-center justify-center gap-2 mt-2 mb-6 px-4">
       <button
         onClick={() => goto(null)}
         className={`px-3 py-1 rounded-full border text-sm whitespace-nowrap
