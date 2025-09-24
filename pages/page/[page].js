@@ -10,7 +10,7 @@ import { DynamicLayout } from '@/themes/theme'
  */
 const Page = props => {
   const theme = siteConfig('THEME', BLOG.THEME, props.NOTION_CONFIG)
-  // ✅ 這裡改成 LayoutArchive
+  // ✅ 原本是 LayoutPostList，這裡改成 LayoutArchive，避免重複標題
   return <DynamicLayout theme={theme} layoutName='LayoutArchive' {...props} />
 }
 
@@ -21,7 +21,7 @@ export async function getStaticPaths({ locale }) {
     postCount / siteConfig('POSTS_PER_PAGE', null, NOTION_CONFIG)
   )
   return {
-    // 第一頁不處理，從第 2 頁開始
+    // remove first page, we 're not gonna handle that.
     paths: Array.from({ length: totalPages - 1 }, (_, i) => ({
       params: { page: '' + (i + 2) }
     })),
@@ -44,14 +44,14 @@ export async function getStaticProps({ params: { page }, locale }) {
   )
   const POSTS_PER_PAGE = siteConfig('POSTS_PER_PAGE', 12, props?.NOTION_CONFIG)
 
-  // 分頁
+  // 处理分页
   props.posts = allPosts.slice(
     POSTS_PER_PAGE * (page - 1),
     POSTS_PER_PAGE * page
   )
   props.page = page
 
-  // 預覽處理
+  // 处理预览
   if (siteConfig('POST_LIST_PREVIEW', false, props?.NOTION_CONFIG)) {
     for (const i in props.posts) {
       const post = props.posts[i]
