@@ -67,8 +67,8 @@ const CONFIG = {
   
   STARTER_ABOUT_BUTTON_TEXT: '預約設計',
   STARTER_ABOUT_BUTTON_URL: 'mailto:lupinart1008@gmail.com',
-  STARTER_ABOUT_IMAGE_1: '/images/starter/about/about_01.jpg',
-  STARTER_ABOUT_IMAGE_2: '/images/starter/about/about-me.jpg',
+  STARTER_ABOUT_IMAGE_1: '/images/starter/about/about-me.jpg',
+  STARTER_ABOUT_IMAGE_2: '/images/starter/about/about_01.jpg',
   STARTER_ABOUT_TIPS_1: '',
   STARTER_ABOUT_TIPS_2: '跨域設計',
   STARTER_ABOUT_TIPS_3: '穩定交付',
