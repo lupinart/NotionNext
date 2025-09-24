@@ -302,7 +302,6 @@ const LayoutBlogAndArchive = props => {
 
     return (
         <>
-            {/* 這裡調整間距，讓標題與頁首的距離更遠 */}
             <section className='bg-white pb-10 pt-20 dark:bg-dark lg:pb-20 lg:pt-[120px]'>
                 <div className='container mx-auto'>
                     {/* 文章標題和描述，只在這裡渲染一次 */}
@@ -350,7 +349,6 @@ const Layout404 = props => {
             <section className='bg-white py-20 dark:bg-dark-2 lg:py-[110px]'>
                 <div className='container mx-auto'>
                     <div className='flex flex-wrap items-center -mx-4'>
-                        {/* 這裡的寬度類別已修正 */}
                         <div className='w-full px-4 md:w-5/12 lg:w-6/12'>
                             <div className='text-center'>
                                 <img
@@ -360,7 +358,6 @@ const Layout404 = props => {
                                 />
                             </div>
                         </div>
-                        {/* 這裡的寬度類別已修正 */}
                         <div className='w-full px-4 md:w-7/12 lg:w-6/12 xl:w-5/12'>
                             <div>
                                 <div className='mb-8'>
@@ -407,7 +404,7 @@ const LayoutCategoryIndex = props => {
                         return (
                             <SmartLink
                                 key={category.name}
-                                href={`/category/${category.name}`}
+                                href={`/category/${encodeURIComponent(category.name)}`}
                                 passHref
                                 legacyBehavior>
                                 <h2
