@@ -305,16 +305,6 @@ const LayoutArchive = props => {
         <>
             <section className='bg-white pb-10 pt-10 dark:bg-dark lg:pb-20 lg:pt-10 mt-16'>
                 <div className='container mx-auto'>
-                    <div className='-mx-4 flex flex-wrap justify-center'>
-                        <div className='w-full px-4'>
-                            <div className='mx-auto mb-6 max-w-[485px] text-center'>
-                                <h2 className='mb-4 text-3xl font-bold text-dark dark:text-white sm:text-4xl md:text-[40px] md:leading-[1.2]'>
-                                    {siteConfig('STARTER_BLOG_TEXT_1')}
-                                </h2>
-                                <p dangerouslySetInnerHTML={{ __html: siteConfig('STARTER_BLOG_TEXT_2') }} className='text-base text-body-color dark:text-dark-6'></p>
-                            </div>
-                        </div>
-                    </div>
                     {/* 在這裡加入分類篩選列，確保它在標題下方 */}
                     <CategoryFilter categories={categories} active={activeCat} />
                     {/* 傳遞過濾後的文章列表給 Blog 元件 */}
@@ -324,7 +314,6 @@ const LayoutArchive = props => {
         </>
     );
 };
-
 
 /**
  * 404页面
