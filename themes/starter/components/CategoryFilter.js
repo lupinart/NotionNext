@@ -19,14 +19,14 @@ export default function CategoryFilter({ categories = [], active }) {
   };
 
   return (
-    <div className="mt-2 mb-6 flex flex-wrap items-center justify-center gap-2">
+    <div className="flex flex-wrap items-center justify-center gap-2 mt-2 mb-6 px-4">
       <button
         onClick={() => goto(null)}
-        className={`px-3 py-1 rounded-full border text-sm
+        className={`px-3 py-1 rounded-full border text-sm whitespace-nowrap
           ${
             !active
               ? "bg-black text-white border-black"
-              : "border-gray-300 hover:border-black"
+              : "border-gray-300 hover:border-black dark:text-gray-400 dark:hover:border-black"
           }`}
       >
         全部
@@ -36,11 +36,11 @@ export default function CategoryFilter({ categories = [], active }) {
         <button
           key={c.name}
           onClick={() => goto(c.name)}
-          className={`px-3 py-1 rounded-full border text-sm
+          className={`px-3 py-1 rounded-full border text-sm whitespace-nowrap
             ${
               active === c.name
                 ? "bg-black text-white border-black"
-                : "border-gray-300 hover:border-black"
+                : "border-gray-300 hover:border-black dark:text-gray-400 dark:hover:border-black"
             }`}
           title={`${c.name}（${c.count}）`}
         >
