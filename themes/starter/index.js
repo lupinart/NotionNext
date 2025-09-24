@@ -525,16 +525,16 @@ const LayoutSignUp = props => {
 
 export {
     Layout404,
-    LayoutArchive: LayoutBlogAndArchive,
     LayoutBase,
     LayoutCategoryIndex,
     LayoutDashboard,
     LayoutIndex,
-    LayoutPostList: LayoutBlogAndArchive,
     LayoutSearch,
     LayoutSignIn,
     LayoutSignUp,
     LayoutSlug,
     LayoutTagIndex,
-    CONFIG as THEME_CONFIG
+    CONFIG as THEME_CONFIG,
+    LayoutBlogAndArchive as LayoutArchive,
+    LayoutBlogAndArchive as LayoutPostList
 }
