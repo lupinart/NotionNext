@@ -258,11 +258,11 @@ const LayoutBlogAndArchive = props => {
           </div>
         </div>
 
-        {/* 你要放在標題之下的膠囊 */}
-        <CategoryFilter categories={categories} active={activeCat} />
-
-        {/* 文章列表 */}
-        <Blog {...props} posts={filteredPosts} />
+<Blog
+  {...props}
+  posts={filteredPosts}
+  headerSlot={<CategoryFilter categories={categories} active={activeCat} />}
+/>
       </div>
     </section>
   )
