@@ -7,7 +7,7 @@ import { DynamicLayout } from '@/themes/theme'
 import { useEffect } from 'react'
 
 /**
- * 归档首页
+ * 归档首頁
  * @param {*} props
  * @returns
  */
@@ -27,25 +27,26 @@ const ArchiveIndex = props => {
   }, [])
 
   const theme = siteConfig('THEME', BLOG.THEME, props.NOTION_CONFIG)
+  // ✅ 使用 LayoutArchive 顯示「設計筆記」「最新分享」「分類膠囊」
   return <DynamicLayout theme={theme} layoutName='LayoutArchive' {...props} />
 }
 
 export async function getStaticProps({ locale }) {
   const props = await getGlobalData({ from: 'archive-index', locale })
-  // 处理分页
+  // 過濾只取已發布文章
   props.posts = props.allPages?.filter(
     page => page.type === 'Post' && page.status === 'Published'
   )
   delete props.allPages
 
+  // 按照日期排序
   const postsSortByDate = Object.create(props.posts)
-
   postsSortByDate.sort((a, b) => {
     return b?.publishDate - a?.publishDate
   })
 
+  // 按月份分組
   const archivePosts = {}
-
   postsSortByDate.forEach(post => {
     const date = formatDateFmt(post.publishDate, 'yyyy-MM')
     if (archivePosts[date]) {
