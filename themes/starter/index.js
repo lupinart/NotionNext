@@ -302,7 +302,6 @@ const LayoutArchive = props => {
 
     return (
         <>
-            {/* 調整間距：使用 pt-16 和 mt-16 讓間距更遠 */}
             <section className='bg-white pb-10 dark:bg-dark lg:pb-20 pt-16 mt-16'>
                 <div className='container mx-auto'>
                     {/* 文章標題區塊 */}
