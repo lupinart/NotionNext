@@ -184,6 +184,24 @@ const LayoutSlug = props => {
 
             {!lock && post && (
               <div id='article-wrapper' className='mx-auto'>
+                {/* ✅ 新增：在 NotionPage 上方顯示文章標籤 */}
+                {post.tags && (
+                  <div className='flex flex-wrap items-center justify-center gap-2 mb-6'>
+                    {post.tags.map(tag => (
+                      <div key={tag.name} className='p-2'>
+                        <SmartLink
+                          href={`/tag/${encodeURIComponent(tag.name)}`}
+                          passHref
+                          className={`cursor-pointer inline-block rounded hover:bg-gray-500 hover:text-white duration-200 mr-2 py-1 px-2 text-md whitespace-nowrap dark:hover:text-white text-gray-600 hover:shadow-xl dark:border-gray-400 notion-${tag.color}_background dark:bg-gray-800`}>
+                          <div className='font-light dark:text-gray-400'>
+                            <i className='mr-1 fas fa-tag' />
+                            {tag.name}
+                          </div>
+                        </SmartLink>
+                      </div>
+                    ))}
+                  </div>
+                )}
                 <NotionPage {...props} />
                 <Comment frontMatter={post} />
                 <ShareBar post={post} />
