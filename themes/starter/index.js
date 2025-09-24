@@ -7,7 +7,7 @@ import NotionPage from '@/components/NotionPage'
 import { siteConfig } from '@/lib/config'
 import { isBrowser } from '@/lib/utils'
 import { useRouter } from 'next/router'
-import { useEffect } from 'react'
+
 import { About } from './components/About'
 import { BackToTopButton } from './components/BackToTopButton'
 import { Blog } from './components/Blog'
@@ -41,7 +41,7 @@ import { SignInForm } from './components/SignInForm'
 import { SignUpForm } from './components/SignUpForm'
 import { SVG404 } from './components/svg/SVG404'
 
-import { useMemo } from 'react'
+import { useEffect, useMemo } from 'react'
 import { useRouter } from 'next/router'
 import CategoryFilter from './components/CategoryFilter'
 
