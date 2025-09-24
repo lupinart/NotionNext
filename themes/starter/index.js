@@ -339,7 +339,7 @@ const LayoutTagIndex = props => {
   return (
     <section className='bg-white pb-10 pt-20 dark:bg-dark lg:pb-20 lg:pt-[120px]'>
       <div className='container mx-auto min-h-96'>
-        <span className='mb-2 text-lg font-semibold text-primary flex justify中心 items-center '>
+        <span className='mb-2 text-lg font-semibold text-primary flex justify-center items-center '>
           {locale.COMMON.TAGS}
         </span>
         <div id='tags-list' className='duration-200 flex flex-wrap justify-center items-center'>
