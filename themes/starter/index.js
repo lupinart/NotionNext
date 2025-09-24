@@ -383,14 +383,10 @@ const LayoutPostList = props => {
 
   return (
     <>
-      {/* */}
-      <section className='bg-white pb-10 pt-20 dark:bg-dark lg:pb-20 lg:pt-[120px]'>
+      <section className='bg-white pb-10 dark:bg-dark lg:pb-20 mt-24'>
         <div className='container mx-auto'>
-          {/* ✅ 新增：在博客列表上方加入分類篩選器 */}
-          {siteConfig('STARTER_BLOG_ENABLE', true, CONFIG) && props.categoryOptions && <CategoryFilter categories={props.categoryOptions} active={activeCat} />}
-
-          {/* 区块标题文字 */}
-          <div className='-mx-4 flex flex-wrap justify-center'>
+          {/* 区块标题文字和分类筛选器容器 */}
+          <div className='flex flex-col items-center justify-center -mx-4'>
             <div className='w-full px-4'>
               <div className='mx-auto mb-[60px] max-w-[485px] text-center'>
                 {slotTitle && (
@@ -416,7 +412,10 @@ const LayoutPostList = props => {
                 )}
               </div>
             </div>
+
+            {siteConfig('STARTER_BLOG_ENABLE', true, CONFIG) && props.categoryOptions && <CategoryFilter categories={props.categoryOptions} active={activeCat} />}
           </div>
+          
           {/* 博客列表 此处优先展示3片文章 */}
           <div className='-mx-4 flex flex-wrap'>
             {posts?.map((item, index) => {
