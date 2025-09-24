@@ -307,7 +307,7 @@ const LayoutArchive = props => {
                 <div className='container mx-auto'>
                     <div className='-mx-4 flex flex-wrap justify-center'>
                         <div className='w-full px-4'>
-                            <div className='mx-auto mb-12 max-w-[485px] text-center'>
+                            <div className='mx-auto mb-6 max-w-[485px] text-center'>
                                 <h2 className='mb-4 text-3xl font-bold text-dark dark:text-white sm:text-4xl md:text-[40px] md:leading-[1.2]'>
                                     {siteConfig('STARTER_BLOG_TEXT_1')}
                                 </h2>
