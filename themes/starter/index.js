@@ -368,7 +368,6 @@ const Layout404 = props => {
     </>
   )
 }
-
 /**
  * 翻页博客列表
  */
@@ -381,7 +380,7 @@ const LayoutPostList = props => {
   const activeCatRaw = router.query.cat
   const activeCat = typeof activeCatRaw === 'string' ? decodeURIComponent(activeCatRaw) : undefined
   
-  // 新增：使用 useMemo 根據 activeCat 過濾文章
+  // 使用 useMemo 根據 activeCat 過濾文章
   const filteredPosts = useMemo(() => {
     if (!activeCat) {
       return posts
@@ -394,13 +393,9 @@ const LayoutPostList = props => {
 
   return (
     <>
-      {/* */}
-      {/* 修正：將最外層的 section 加上 mt-20 以避免與 fixed Header 重疊 */}
       <section className='bg-white pb-10 pt-20 dark:bg-dark lg:pb-20 lg:pt-[120px] mt-20'>
         <div className='container mx-auto'>
-          {/* ✅ 這裡是篩選列 */}
-          {siteConfig('STARTER_BLOG_ENABLE', true, CONFIG) && props.categoryOptions && <CategoryFilter categories={props.categoryOptions} active={activeCat} />}
-
+          
           {/* 区块标题文字 */}
           <div className='-mx-4 flex flex-wrap justify-center'>
             <div className='w-full px-4'>
@@ -429,9 +424,14 @@ const LayoutPostList = props => {
               </div>
             </div>
           </div>
-          {/* 博客列表 此处优先展示3片文章 */}
+          
+          {/* 這裡就是你想要的膠囊篩選器，放在了標題下方 */}
+          {siteConfig('STARTER_BLOG_ENABLE', true, CONFIG) && props.categoryOptions && (
+            <CategoryFilter categories={props.categoryOptions} active={activeCat} />
+          )}
+
+          {/* 博客列表 */}
           <div className='-mx-4 flex flex-wrap'>
-            {/* 使用過濾後的文章列表 */}
             {filteredPosts?.map((item, index) => {
               return (
                 <div key={index} className='w-full px-4 md:w-1/2 lg:w-1/3'>
@@ -469,7 +469,6 @@ const LayoutPostList = props => {
           </div>
         </div>
       </section>
-      {/* */}
     </>
   )
 }
