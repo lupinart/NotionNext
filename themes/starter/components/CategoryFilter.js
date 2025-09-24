@@ -1,4 +1,3 @@
-// themes/starter/components/CategoryFilter.js
 import { useRouter } from "next/router";
 
 export default function CategoryFilter({ categories = [], active }) {
