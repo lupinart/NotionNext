@@ -399,6 +399,17 @@ const LayoutSignUp = () => {
     </div>
   )
 }
+// 博客列表（純文章列表，不帶標題膠囊）
+const LayoutPostList = props => {
+  const { posts } = props
+  return (
+    <section className='bg-white pb-10 pt-10 dark:bg-dark'>
+      <div className='container mx-auto'>
+        <Blog {...props} posts={posts} />
+      </div>
+    </section>
+  )
+}
 
 export {
   Layout404,
@@ -412,6 +423,6 @@ export {
   LayoutSlug,
   LayoutTagIndex,
   CONFIG as THEME_CONFIG,
-  LayoutBlogAndArchive as LayoutArchive
+  LayoutBlogAndArchive as LayoutArchive, // ➜ 專門給 /archive 用
+  LayoutPostList // ➜ 專門給 /page/[page].js 用
 }
-
