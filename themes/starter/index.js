@@ -53,7 +53,7 @@ import { Style } from './style'
 const LayoutBase = props => {
     const { children } = props
     // 极简模式，会隐藏掉页头页脚等组件，便于嵌入网页等功能
-    const { isLiteMode } = useGlobal()
+    const { isLiteMode: globalLiteMode } = useGlobal()
     const router = useRouter()
 
     // 加载wow动画
@@ -78,17 +78,17 @@ const LayoutBase = props => {
             <Style />
 
             {/* 页头 */}
-            {isLiteMode ? <></> : <Header {...props} />}
+            {globalLiteMode ? <></> : <Header {...props} />}
 
             <div id='main-wrapper' className='grow'>
                 {children}
             </div>
 
             {/* 页脚 */}
-            {isLiteMode ? <></> : <Footer {...props} />}
+            {globalLiteMode ? <></> : <Footer {...props} />}
 
             {/* 悬浮按钮 */}
-            {isLiteMode ? <></> : <BackToTopButton />}
+            {globalLiteMode ? <></> : <BackToTopButton />}
 
             {/* <MadeWithButton/> */}
         </div>
@@ -257,9 +257,9 @@ const LayoutSearch = props => {
 }
 
 /**
- * 文章归档
+ * 統一的博客列表和歸檔布局
  */
-const LayoutArchive = props => {
+const LayoutBlogAndArchive = props => {
     const { posts, category, tag } = props
     const slotTitle = category || tag
 
@@ -302,12 +302,13 @@ const LayoutArchive = props => {
 
     return (
         <>
+            {/* 這裡調整間距，讓標題與頁首的距離更遠 */}
             <section className='bg-white pb-10 pt-20 dark:bg-dark lg:pb-20 lg:pt-[120px]'>
                 <div className='container mx-auto'>
-                    {/* 文章標題區塊 */}
+                    {/* 文章標題和描述，只在這裡渲染一次 */}
                     <div className='-mx-4 flex flex-wrap justify-center'>
                         <div className='w-full px-4'>
-                            <div className='mx-auto mb-[60px] max-w-[485px] text-center'>
+                            <div className='mx-auto mb-6 max-w-[485px] text-center'>
                                 {slotTitle && (
                                     <h2 className='mb-4 text-3xl font-bold text-dark dark:text-white sm:text-4xl md:text-[40px] md:leading-[1.2]'>
                                         {slotTitle}
@@ -334,8 +335,9 @@ const LayoutArchive = props => {
                 </div>
             </section>
         </>
-    )
-}
+    );
+};
+
 
 /**
  * 404页面
@@ -348,7 +350,8 @@ const Layout404 = props => {
             <section className='bg-white py-20 dark:bg-dark-2 lg:py-[110px]'>
                 <div className='container mx-auto'>
                     <div className='flex flex-wrap items-center -mx-4'>
-                        <div className='w-full px-4 md:w-5/2 lg:w-6/2'>
+                        {/* 這裡的寬度類別已修正 */}
+                        <div className='w-full px-4 md:w-5/12 lg:w-6/12'>
                             <div className='text-center'>
                                 <img
                                     src='/images/starter/404.svg'
@@ -357,7 +360,8 @@ const Layout404 = props => {
                                 />
                             </div>
                         </div>
-                        <div className='w-full px-4 md:w-7/2 lg:w-6/2 xl:w-5/2'>
+                        {/* 這裡的寬度類別已修正 */}
+                        <div className='w-full px-4 md:w-7/12 lg:w-6/12 xl:w-5/12'>
                             <div>
                                 <div className='mb-8'>
                                     <SVG404 />
@@ -381,12 +385,6 @@ const Layout404 = props => {
         </>
     )
 }
-
-/**
- * 翻页博客列表 (首頁使用)
- */
-// 移除多餘的 LayoutPostList 元件，讓 LayoutArchive 統一處理文章列表頁面
-// const LayoutPostList = props => { ... }
 
 /**
  * 分类列表
@@ -449,12 +447,12 @@ const LayoutTagIndex = props => {
                         return (
                             <div key={tag.name} className='p-2'>
                                 <SmartLink
-                                    key={tag}
+                                    key={tag.name}
                                     href={`/tag/${encodeURIComponent(tag.name)}`}
                                     passHref
-                                    className={`cursor-pointer inline-block rounded hover:bg-gray-500 hover:text-white duration-200  mr-2 py-1 px-2 text-md whitespace-nowrap dark:hover:text-white text-gray-600 hover:shadow-xl dark:border-gray-400 notion-${tag.color}_background dark:bg-gray-800`}>
+                                    className={`cursor-pointer inline-block rounded hover:bg-gray-500 hover:text-white duration-200 mr-2 py-1 px-2 text-md whitespace-nowrap dark:hover:text-white text-gray-600 hover:shadow-xl dark:border-gray-400 notion-${tag.color || 'default'}_background dark:bg-gray-800`}>
                                     <div className='font-light dark:text-gray-400'>
-                                        <i className='mr-1 fas fa-tag' />{' '}
+                                        <i className='mr-1 fas fa-tag' aria-hidden='true' />{' '}
                                         {tag.name + (tag.count ? `(${tag.count})` : '')}{' '}
                                     </div>
                                 </SmartLink>
@@ -530,12 +528,12 @@ const LayoutSignUp = props => {
 
 export {
     Layout404,
-    LayoutArchive,
+    LayoutArchive: LayoutBlogAndArchive,
     LayoutBase,
     LayoutCategoryIndex,
     LayoutDashboard,
     LayoutIndex,
-    LayoutPostList: LayoutArchive,
+    LayoutPostList: LayoutBlogAndArchive,
     LayoutSearch,
     LayoutSignIn,
     LayoutSignUp,
