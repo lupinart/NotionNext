@@ -16,8 +16,8 @@ const CONFIG = {
   STARTER_HERO_BUTTON_1_TEXT: '預約設計', // 英雄区按钮
   STARTER_HERO_BUTTON_1_URL:
     'mailto:lupinart1008@gmail.com', // 英雄区按钮
-  STARTER_HERO_BUTTON_2_TEXT: '追蹤IG', // 英雄区按钮
-  STARTER_HERO_BUTTON_2_URL: 'https://www.instagram.com/lupin_visual/#', // 英雄区按钮
+  STARTER_HERO_BUTTON_2_TEXT: '作品集', // 英雄区按钮
+  STARTER_HERO_BUTTON_2_URL: 'https://thirsty-carriage-321.notion.site/lupin-portfolio?v=26e5d9d8281181568c91000cf245411a/#', // 英雄区按钮
   STARTER_HERO_BUTTON_2_ICON: '/images/starter/instagram.svg', // 英雄区按钮2的图标，不需要则留空
 
   // 英雄区配图，如需隐藏，改为空值即可 ''
