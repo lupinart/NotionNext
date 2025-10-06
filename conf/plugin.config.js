@@ -27,6 +27,8 @@ module.exports = {
   TianliGPT_KEY: process.env.NEXT_PUBLIC_TIANLI_GPT_KEY || '',
 
   // 邮件
-  MAILCHIMP_LIST_ID: process.env.MAILCHIMP_LIST_ID || null, // 开启mailichimp邮件订阅 客户列表ID ，具体使用方法参阅文档
-  MAILCHIMP_API_KEY: process.env.MAILCHIMP_API_KEY || null // 开启mailichimp邮件订阅 APIkey
+  EMAIL_OCTOPUS_API_KEY: process.env.EMAIL_OCTOPUS_API_KEY || null, // EmailOctopus 订阅 API Key
+  EMAIL_OCTOPUS_LIST_ID: process.env.EMAIL_OCTOPUS_LIST_ID || null, // EmailOctopus 订阅列表 ID
+  MAILCHIMP_LIST_ID: process.env.MAILCHIMP_LIST_ID || null, // Mailchimp 客户列表 ID
+  MAILCHIMP_API_KEY: process.env.MAILCHIMP_API_KEY || null // Mailchimp API key
 }

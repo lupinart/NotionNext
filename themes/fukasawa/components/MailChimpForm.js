@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import { subscribeToNewsletter } from '@/lib/plugins/mailchimp'
+import { subscribeToNewsletter } from '@/lib/plugins/newsletter'
 import { siteConfig } from '@/lib/config'
 import CONFIG from '../config'
 import { useGlobal } from '@/lib/global'
